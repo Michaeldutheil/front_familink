@@ -6,7 +6,8 @@ class API {
 
   constructor() {
     this.axios = axios;
-    this.axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+    this.axios.defaults.baseURL =
+      'https://michaeldutheil-server.eddi.cloud/api';
     this.interceptorsJWT();
   }
 

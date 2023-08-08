@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Alert, Button, Card, Tooltip } from 'flowbite-react';
+import { Alert, Card, Tooltip } from 'flowbite-react';
 import { useAppSelector } from '../../hooks/redux';
 
 import './pictures.css';
@@ -11,7 +11,7 @@ import ModalBigPicture from './Modals/ModalBigPicture';
 import ModalUpload from './Modals/ModalUpload';
 
 function Pictures() {
-  const API_URL = import.meta.env.VITE_API_URL_PICTURES;
+  const API_URL = 'https://michaeldutheil-server.eddi.cloud/';
   const [showError, setShowError] = useState(false);
   const error = useAppSelector((state) => state.pictures.error) ?? '';
 

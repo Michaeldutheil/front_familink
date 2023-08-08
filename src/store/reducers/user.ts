@@ -122,26 +122,29 @@ export const login = createAsyncThunk(
 );
 
 // Action asynchrone pour créer un utilisateur
-export const createUser = createAsyncThunk('user/signup', async (json: any) => {
-  try {
-    const response = await Api.axios.post(`user/signup`, json, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+export const createUser = createAsyncThunk(
+  'api/user/signup',
+  async (json: any) => {
+    try {
+      const response = await Api.axios.post(`user/signup`, json, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    return response.data;
-  } catch (error: any) {
-    if (error.response && error.response.status === 400) {
-      const errorMessage = error.response.data.message;
+      return response.data;
+    } catch (error: any) {
+      if (error.response && error.response.status === 400) {
+        const errorMessage = error.response.data.message;
 
-      throw new Error(errorMessage);
+        throw new Error(errorMessage);
+      }
+      throw new Error(
+        "Une erreur s'est produite lors de l'ajout de l'utilisateur."
+      );
     }
-    throw new Error(
-      "Une erreur s'est produite lors de l'ajout de l'utilisateur."
-    );
   }
-});
+);
 
 // Action asynchrone pour rafraîchir l'utilisateur
 export const refreshUser = createAsyncThunk(
