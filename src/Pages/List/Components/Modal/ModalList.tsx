@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 
 import { Modal, Button, Label, TextInput, Select } from 'flowbite-react';
 
-import { ModalListProps } from '../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { postLists } from '../../../store/reducers/lists';
+import { ModalListProps } from '../../../../interface';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { postLists } from '../../../../store/reducers/lists';
 
 function ModalList({ setOpenListModal, openListModal }: ModalListProps) {
   const dispatch = useAppDispatch();

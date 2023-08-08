@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
 import { Modal, Button, Label, TextInput } from 'flowbite-react';
 
-import { ModalTaskProps } from '../../../interface';
+import { ModalTaskProps } from '../../../../interface';
 
-import { addTask } from '../../../store/reducers/lists';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { addTask } from '../../../../store/reducers/lists';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 
 function ModalTask({
   setOpenTaskModal,

@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Button, Modal } from 'flowbite-react';
-import { ModalDeleteTaskProps } from '../../../interface';
+import { ModalDeleteTaskProps } from '../../../../interface';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { deleteTask } from '../../../../store/reducers/lists';
 
-import warning from '../../../assets/Icon/attention.png';
-import { useAppDispatch } from '../../../hooks/redux';
-import { deleteTask } from '../../../store/reducers/lists';
+import warning from '../../../../assets/Icon/attention.png';
 
 function ModalDeleteTask({
   setOpenDeleteModalTask,

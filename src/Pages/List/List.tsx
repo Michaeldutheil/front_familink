@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Card, Checkbox, Label, Button } from 'flowbite-react';
 import { Navigate } from 'react-router-dom';
 
-import ModalList from './Modal/ModalList';
-import ModalTask from './Modal/ModalTask';
+import ModalList from './Components/Modal/ModalList';
+import ModalTask from './Components/Modal/ModalTask';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
@@ -15,8 +15,8 @@ import outil from '../../assets/Icon/outil.png';
 import corbeille from '../../assets/Icon/corbeille.png';
 import caddies from '../../assets/Icon/caddie.png';
 
-import ModalDeleteList from './Modal/ModalDeleteList';
-import ModalDeleteTask from './Modal/ModalDeleteTask';
+import ModalDeleteList from './Components/Modal/ModalDeleteList';
+import ModalDeleteTask from './Components/Modal/ModalDeleteTask';
 import { updateTask } from '../../store/reducers/lists';
 import MainTitle from '../../App/Components/MainTitle/MainTitle';
 

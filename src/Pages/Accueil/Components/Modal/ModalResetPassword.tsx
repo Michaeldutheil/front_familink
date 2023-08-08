@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 
 import { Modal, Button, Label, TextInput } from 'flowbite-react';
 
-import { resetPassword } from '../../../store/reducers/user';
-import { ModalResetPasswordProps } from '../../../interface';
-import { useAppDispatch } from '../../../hooks/redux';
+import { resetPassword } from '../../../../store/reducers/user';
+import { ModalResetPasswordProps } from '../../../../interface';
+import { useAppDispatch } from '../../../../hooks/redux';
 
 function ModalResetPassword({
   setOpenModalResetPassword,

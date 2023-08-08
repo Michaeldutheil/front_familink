@@ -6,9 +6,9 @@ import { Navigate } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 
 import Mockup from './Mockup';
-import ModalLogin from './Modal/ModalLogin';
-import ModalSignUp from './Modal/ModalSignUp';
-import ModalResetPassword from './Modal/ModalResetPassword';
+import ModalLogin from './Components/Modal/ModalLogin';
+import ModalSignUp from './Components/Modal/ModalSignUp';
+import ModalResetPassword from './Components/Modal/ModalResetPassword';
 
 import success from '../../assets/Icon/accepter.png';
 

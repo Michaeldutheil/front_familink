@@ -11,12 +11,11 @@ import {
   Spinner,
 } from 'flowbite-react';
 
-import warning from '../../../assets/Icon/attention.png';
-import success from '../../../assets/Icon/accepter.png';
+import warning from '../../../../assets/Icon/attention.png';
 
-import { login } from '../../../store/reducers/user';
-import { ModalLoginProps } from '../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { login } from '../../../../store/reducers/user';
+import { ModalLoginProps } from '../../../../interface';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 
 function ModalLogin({
   setOpenLoginModal,

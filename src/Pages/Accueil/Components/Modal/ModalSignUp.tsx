@@ -10,9 +10,9 @@ import {
 
 import validator from 'validator';
 
-import { useAppDispatch } from '../../../hooks/redux';
-import { createUser } from '../../../store/reducers/user';
-import { ModalSignUpProps } from '../../../interface';
+import { useAppDispatch } from '../../../../hooks/redux';
+import { createUser } from '../../../../store/reducers/user';
+import { ModalSignUpProps } from '../../../../interface';
 
 function ModalSignUp({
   setOpenSignUpModal,
