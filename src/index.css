@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  border: 1px solid red;
+} */
+
+body {
+  background-color: #1b1b19;
+  color: white;
+  overflow-y: scroll !important;
+}
+
+main {
+  background: #e0dedb;
+}
+
+nav {
+  flex-flow: row-reverse;
+}
+
+.modal {
+  animation-name: scaleModal;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaleModal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

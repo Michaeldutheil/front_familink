@@ -1,0 +1,68 @@
+.send {
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.sent {
+  animation-name: slideMoreRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideMoreRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.down {
+  animation-name: slideDown;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.up {
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.comment-deleted {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, height 0.5s, padding 0.5s, margin 0.5s;
+}
