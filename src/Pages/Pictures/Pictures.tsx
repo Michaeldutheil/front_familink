@@ -11,7 +11,7 @@ import ModalBigPicture from './Modals/ModalBigPicture';
 import ModalUpload from './Modals/ModalUpload';
 
 function Pictures() {
-  const API_URL = 'https://michaeldutheil-server.eddi.cloud/';
+  const API_URL = import.meta.env.VITE_API_URL_PICTURES;
   const [showError, setShowError] = useState(false);
   const error = useAppSelector((state) => state.pictures.error) ?? '';
 
