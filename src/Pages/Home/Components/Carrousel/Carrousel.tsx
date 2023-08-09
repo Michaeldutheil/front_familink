@@ -7,7 +7,7 @@ import MainTitle from '../../../../App/Components/MainTitle/MainTitle';
 function Carrousel() {
   const [openBigPicture, setOpenBigPicture] = useState(false);
   const pictures = useAppSelector((state) => state.pictures.pictures);
-  const API_URL = import.meta.env.VITE_API_URL_PICTURES;
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const [selectedPhoto, setSelectedPhoto] = useState(0);
 

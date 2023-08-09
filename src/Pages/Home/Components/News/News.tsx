@@ -3,7 +3,7 @@ import { useAppSelector } from '../../../../hooks/redux';
 import './news.css';
 import MainTitle from '../../../../App/Components/MainTitle/MainTitle';
 
-const API_URL = import.meta.env.VITE_API_URL_PICTURES;
+const API_URL = import.meta.env.VITE_API_URL;
 
 function News() {
   const userName = useAppSelector((state) => state.user.pseudo);
