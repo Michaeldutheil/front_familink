@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useState } from 'react';
@@ -8,6 +8,7 @@ import { useAppDispatch } from '../../hooks/redux';
 import logo from '../../assets/Logo/logo.png';
 
 function ResetMail() {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,7 +24,7 @@ function ResetMail() {
       userId,
     };
     dispatch(confirmResetPassword(jsonData));
-    <Navigate to="/" />;
+    navigate('/');
   };
 
   return (
