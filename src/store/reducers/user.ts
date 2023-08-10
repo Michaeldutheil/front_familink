@@ -201,6 +201,18 @@ export const updateUser = createAsyncThunk(
   }
 );
 
+export const deleteUser = createAsyncThunk(
+  'user/delete',
+  async (userId: any) => {
+    try {
+      const { data } = await Api.axios.delete(`user/${userId}/delete`);
+      return data;
+    } catch (error: any) {
+      return error.response.data;
+    }
+  }
+);
+
 export const resetPassword = createAsyncThunk(
   'user/resetpassword',
   async (jsonData: any) => {

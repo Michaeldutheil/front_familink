@@ -12,7 +12,12 @@ import {
 
 import ModalUser from './Modal/ModalUser';
 
-import { refreshUser, resetAlert } from '../../store/reducers/user';
+import {
+  deleteUser,
+  logout,
+  refreshUser,
+  resetAlert,
+} from '../../store/reducers/user';
 
 import crayon from '../../assets/Icon/crayon.png';
 import familyIcon from '../../assets/Icon/famille.png';
@@ -22,14 +27,20 @@ import warning from '../../assets/Icon/page-derreur.png';
 import ModalFamily from './Modal/ModalFamily';
 import ModalSignUpParent from './Modal/ModalSignUpParent';
 import ModalSignUpEnfant from './Modal/ModalSignUpEnfant';
-import ModalDeleteFamily from './Modal/ModalDeleteList';
+import ModalDeleteFamily from './Modal/ModalDeleteFamily';
 
 import './profil.scss';
+import ModalDeleteUser from './Modal/ModalDeleteUser';
+import { useNavigate } from 'react-router-dom';
+import { logoutList } from '../../store/reducers/lists';
+import { logoutPicture } from '../../store/reducers/picture';
 
 function Profil() {
   const [newOldFamily, setNewOldFamily] = useState('');
   const [openUserModal, setOpenUserModal] = useState<boolean>(false);
   const [openModalDeleteFamily, setOpenModalDeleteFamily] =
+    useState<boolean>(false);
+  const [openModalDeleteUser, setOpenModalDeleteUser] =
     useState<boolean>(false);
   const [openSignUpModalParent, setOpenSignUpModalParent] =
     useState<boolean>(false);
@@ -38,6 +49,7 @@ function Profil() {
   const [openFamilyModal, setOpenFamilyModal] = useState<boolean>(false);
   const [showAlertSuccess, setShowAlertSuccess] = useState(false);
 
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const {
@@ -84,6 +96,14 @@ function Profil() {
   const handleDelete = () => {
     dispatch(deleteFamily(userId)).then(() => {
       dispatch(refreshUser(userId));
+    });
+  };
+
+  const handleDeleteUser = () => {
+    dispatch(deleteUser(userId)).then(() => {
+      dispatch(logout());
+      dispatch(logoutList());
+      dispatch(logoutPicture());
     });
   };
 
@@ -199,12 +219,19 @@ function Profil() {
                     setOpenModalDeleteFamily(!openModalDeleteFamily)
                   }
                 >
-                  <p>Supprimer mon compte de la famille {family}</p>
+                  <p>Quitter la famille {family}</p>
                 </Button>
               )
             ))}
         </div>
+        <Button
+          className="mt-5 inline-flex items-center rounded-lg bg-red-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-red-500 hover:text-familink-black focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          onClick={() => setOpenModalDeleteUser(!openModalDeleteUser)}
+        >
+          <p>Supprimer mon compte {pseudo} de FamiLink </p>
+        </Button>
       </div>
+
       <ModalUser
         setOpenUserModal={setOpenUserModal}
         openUserModal={openUserModal}
@@ -226,6 +253,12 @@ function Profil() {
         openModalDeleteFamily={openModalDeleteFamily}
         handleDelete={handleDelete}
       />
+      <ModalDeleteUser
+        setOpenModalDeleteUser={setOpenModalDeleteUser}
+        openModalDeleteUser={openModalDeleteUser}
+        handleDeleteUser={handleDeleteUser}
+      />
+
       {showAlertSuccess && (
         <div className={`alert ${showAlertSuccess ? 'show' : ''}`}>
           {alert && alert.type === 'success' && (

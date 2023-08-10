@@ -37,6 +37,12 @@ export interface ModalDeleteFamilyProps {
   handleDelete: () => void;
 }
 
+export interface ModalDeleteUserProps {
+  setOpenModalDeleteUser: (value: boolean) => void;
+  openModalDeleteUser: boolean;
+  handleDeleteUser: () => void;
+}
+
 export interface ModalSignUpPropsEnfant {
   setOpenSignUpModalEnfant: (value: boolean) => void;
   openSignUpModalEnfant: boolean;
