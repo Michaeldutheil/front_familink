@@ -23,7 +23,7 @@ function Header() {
               <Link className="ml-1 mr-1 text-red-500" to="/profil">
                 ici
               </Link>
-              pour crée une famille
+              pour créer une famille
             </p>
           </div>
         ) : (

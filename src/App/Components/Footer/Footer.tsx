@@ -9,7 +9,7 @@ function FooterHome() {
       <Footer.Copyright by="Familink™" href="/home" year={date.getFullYear()} />
       <div className="flex flex-wrap gap-3">
         <Link to="/about" onClick={() => window.scrollTo(0, 0)}>
-          A propos
+          À propos
         </Link>
         <Link to="/privacy-policy" onClick={() => window.scrollTo(0, 0)}>
           Politique de confidentialité
