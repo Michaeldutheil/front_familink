@@ -12,10 +12,9 @@ import validator from 'validator';
 import { ModalSignUpPropsEnfant } from '../../../interface';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { createUser } from '../../../store/reducers/user';
-import ModalWarningEnfant from './ModalWarningFamily';
-
-import '../profil.css';
 import ModalWarningFamily from './ModalWarningFamily';
+
+import '../profil.scss';
 
 function ModalSignUpEnfant({
   setOpenSignUpModalEnfant,

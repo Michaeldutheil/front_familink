@@ -16,7 +16,6 @@ import { refreshUser, resetAlert } from '../../store/reducers/user';
 
 import crayon from '../../assets/Icon/crayon.png';
 import familyIcon from '../../assets/Icon/famille.png';
-import './profil.css';
 import success from '../../assets/Icon/accepter.png';
 import warning from '../../assets/Icon/page-derreur.png';
 
@@ -24,6 +23,8 @@ import ModalFamily from './Modal/ModalFamily';
 import ModalSignUpParent from './Modal/ModalSignUpParent';
 import ModalSignUpEnfant from './Modal/ModalSignUpEnfant';
 import ModalDeleteFamily from './Modal/ModalDeleteList';
+
+import './profil.scss';
 
 function Profil() {
   const [newOldFamily, setNewOldFamily] = useState('');

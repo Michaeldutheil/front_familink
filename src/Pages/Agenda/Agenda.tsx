@@ -6,7 +6,6 @@ import 'react-day-picker/dist/style.css';
 import { Alert, Button, Card, Modal, Tooltip } from 'flowbite-react';
 import fail from '../../assets/Icon/avertissement.png';
 
-import './agenda.css';
 import send from '../../assets/envoyer.png';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import {
@@ -17,6 +16,8 @@ import {
 import warning from '../../assets/Icon/attention.png';
 import AlertBlock from './Components/AlertBlock';
 import MainTitle from '../../App/Components/MainTitle/MainTitle';
+
+import './agenda.scss';
 
 function Agenda({ isHomePage }) {
   const rootRef = useRef<HTMLFormElement>(null);

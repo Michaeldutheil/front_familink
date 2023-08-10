@@ -1,7 +1,8 @@
 import { Card } from 'flowbite-react';
 import { useAppSelector } from '../../../../hooks/redux';
-import './news.css';
 import MainTitle from '../../../../App/Components/MainTitle/MainTitle';
+
+import './news.scss';
 
 const API_URL = import.meta.env.VITE_API_URL;
 

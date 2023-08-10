@@ -1,4 +1,3 @@
-import './list.css';
 import { useState } from 'react';
 import { Card, Checkbox, Label, Button } from 'flowbite-react';
 import { Navigate } from 'react-router-dom';
@@ -19,6 +18,8 @@ import ModalDeleteList from './Components/Modal/ModalDeleteList';
 import ModalDeleteTask from './Components/Modal/ModalDeleteTask';
 import { updateTask } from '../../store/reducers/lists';
 import MainTitle from '../../App/Components/MainTitle/MainTitle';
+
+import './list.scss';
 
 function List() {
   const lists = useAppSelector((state) => state.lists.list);

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './error.css';
+import './error.scss';
 
 import errorImage from '../../assets/Icon/404.svg';
 

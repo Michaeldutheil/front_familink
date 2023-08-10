@@ -8,7 +8,7 @@ import {
   postMessage,
 } from '../../../../../store/reducers/message';
 
-import './modal.css';
+import './modal.scss';
 
 function AddMessageModal({
   addModal,

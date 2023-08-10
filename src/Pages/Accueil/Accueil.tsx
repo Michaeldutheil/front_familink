@@ -10,10 +10,10 @@ import ModalLogin from './Components/Modal/ModalLogin';
 import ModalSignUp from './Components/Modal/ModalSignUp';
 import ModalResetPassword from './Components/Modal/ModalResetPassword';
 
+import Cookies from '../../App/Components/Cookies/Cookies';
 import success from '../../assets/Icon/accepter.png';
 
-import './accueil.css';
-import Cookies from '../../App/Components/Cookies/Cookies';
+import './accueil.scss';
 
 function Accueil() {
   const [openLoginModal, setOpenLoginModal] = useState<boolean>(false);

@@ -10,7 +10,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 
-import './index.css';
+import './index.scss';
 
 import App from './App/App';
 import Accueil from './Pages/Accueil/Accueil';

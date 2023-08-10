@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 /* import logo from '../../../assets/logo.png'; */
 import { useAppSelector } from '../../../../hooks/redux';
 
-import './header.css';
+import './header.scss';
 
 function Header() {
   const { pseudo, family, familyId } = useAppSelector((state) => state.user);

@@ -8,7 +8,7 @@ import MessageBoard from './Components/MessageBoard/MessageBoard';
 import Carrousel from './Components/Carrousel/Carrousel';
 // import ListAndWeather from './Components/ListAndWeather/ListAndWeather';
 
-import './home.css';
+import './home.scss';
 import accepter from '../../assets/Icon/accepter.png';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import List from '../List/List';

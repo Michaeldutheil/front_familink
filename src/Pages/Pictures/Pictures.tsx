@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { Alert, Card, Tooltip } from 'flowbite-react';
 import { useAppSelector } from '../../hooks/redux';
 
-import './pictures.css';
-
 import fail from '../../assets/Icon/avertissement.png';
 
 import ModalBigPicture from './Modals/ModalBigPicture';
 import ModalUpload from './Modals/ModalUpload';
+
+import './pictures.scss';
 
 function Pictures() {
   const API_URL = import.meta.env.VITE_API_URL;
