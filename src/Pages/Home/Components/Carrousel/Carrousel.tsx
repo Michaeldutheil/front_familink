@@ -1,7 +1,7 @@
 import { Carousel, Modal } from 'flowbite-react';
 import { useState } from 'react';
 import { useAppSelector } from '../../../../hooks/redux';
-import ModalBigPicture from '../../../Pictures/Modals/ModalBigPicture';
+import ModalBigPicture from '../../../Pictures/Components/Modals/ModalBigPicture';
 import MainTitle from '../../../../App/Components/MainTitle/MainTitle';
 
 function Carrousel() {

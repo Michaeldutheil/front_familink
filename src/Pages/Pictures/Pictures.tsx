@@ -5,8 +5,8 @@ import { useAppSelector } from '../../hooks/redux';
 
 import fail from '../../assets/Icon/avertissement.png';
 
-import ModalBigPicture from './Modals/ModalBigPicture';
-import ModalUpload from './Modals/ModalUpload';
+import ModalBigPicture from './Components/Modals/ModalBigPicture';
+import ModalUpload from './Components/Modals/ModalUpload';
 
 import './pictures.scss';
 

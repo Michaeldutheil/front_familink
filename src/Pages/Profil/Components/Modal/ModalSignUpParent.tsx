@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import validator from 'validator';
 import {
   Modal,
   Button,
@@ -7,19 +8,16 @@ import {
   Checkbox,
   Alert,
 } from 'flowbite-react';
-import validator from 'validator';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { ModalSignUpPropsParent } from '../../../../interface';
+import { createUser } from '../../../../store/reducers/user';
 
-import { ModalSignUpPropsEnfant } from '../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { createUser } from '../../../store/reducers/user';
-import ModalWarningFamily from './ModalWarningFamily';
+import ModalWarningEnfant from './ModalWarningFamily';
 
-import '../profil.scss';
-
-function ModalSignUpEnfant({
-  setOpenSignUpModalEnfant,
-  openSignUpModalEnfant,
-}: ModalSignUpPropsEnfant) {
+function ModalSignUpParent({
+  setOpenSignUpModalParent,
+  openSignUpModalParent,
+}: ModalSignUpPropsParent) {
   const rootRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const { familyId } = useAppSelector((state) => state.user);
@@ -77,15 +75,15 @@ function ModalSignUpEnfant({
       first_name: prenom,
       last_name: nom,
       pseudo,
-      role_id: 2,
+      role_id: 1,
       family_id: familyId,
     };
 
     dispatch(createUser(json))
       .unwrap()
       .then(() => {
-        setOpenSignUpModalEnfant(false);
-        setPersonne("d'un enfant");
+        setOpenSignUpModalParent(false);
+        setPersonne("d'un parent");
         setOpenModalWarningFamily(true);
         setPrenom('');
         setNom('');
@@ -108,8 +106,8 @@ function ModalSignUpEnfant({
     <div ref={rootRef}>
       <Modal
         root={rootRef.current ?? undefined}
-        onClose={() => setOpenSignUpModalEnfant(false)}
-        show={openSignUpModalEnfant}
+        onClose={() => setOpenSignUpModalParent(!openSignUpModalParent)}
+        show={openSignUpModalParent}
         className="modal flex items-center justify-center bg-transparent backdrop-blur-sm"
       >
         <Modal.Body className="rounded bg-[#E0DEDB]">
@@ -118,34 +116,35 @@ function ModalSignUpEnfant({
               <h3 className="text-xl font-medium text-gray-900 dark:text-white">
                 <div className="flex">
                   <span className="mr-1">Crée un compte </span>
-                  <p className="mr-1 text-red-500">enfant</p>
+                  <p className="mr-1 text-red-500">parent</p>
                   <span>supplémentaire </span>
                 </div>
               </h3>
               <Button
                 size="xs"
                 className="hover:bg-gray-90 rounded-full bg-gray-800 font-medium text-white transition-all duration-300 hover:bg-slate-400 hover:text-familink-black focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                onClick={() => setOpenSignUpModalEnfant(!openSignUpModalEnfant)}
+                onClick={() => setOpenSignUpModalParent(!openSignUpModalParent)}
               >
                 X
               </Button>
             </section>
+
             {showAlert && (
               <Alert className="flex" color="failure" withBorderAccent>
                 <span>
-                  <div>
+                  <p>
                     <div className="flex">
                       <span className="mr-3 font-medium">Attention !</span>
                       {alreadyExist ? (
-                        <div>L&apos;email existe déjà sur familink ...</div>
+                        <p>L&apos;email existe déjà sur familink ...</p>
                       ) : (
-                        <div>
+                        <p>
                           Une erreur s&apos;est produite lors de la création du
                           compte.
-                        </div>
+                        </p>
                       )}
                     </div>
-                  </div>
+                  </p>
                 </span>
               </Alert>
             )}
@@ -159,7 +158,7 @@ function ModalSignUpEnfant({
                   <Label htmlFor="Pseudo" value="Son pseudo" />
                 </div>
                 <TextInput
-                  id="pseudo_child"
+                  id="pseudo_parent"
                   placeholder="Pseudo"
                   required
                   aria-label="choisir un pseudo"
@@ -172,7 +171,7 @@ function ModalSignUpEnfant({
                   <Label htmlFor="firstname" value="Son prénom" />
                 </div>
                 <TextInput
-                  id="firstname_child"
+                  id="firstname_parent"
                   required
                   placeholder="Prénom"
                   aria-label="choisir un prénom"
@@ -185,7 +184,7 @@ function ModalSignUpEnfant({
                   <Label htmlFor="lastname" value="Son nom" />
                 </div>
                 <TextInput
-                  id="lastname_child"
+                  id="lastname_parent"
                   required
                   placeholder="Nom"
                   aria-label="choisir un nom"
@@ -207,7 +206,7 @@ function ModalSignUpEnfant({
                   )}
                 </div>
                 <TextInput
-                  id="email_child"
+                  id="email_parent"
                   required
                   autoComplete="username"
                   placeholder="Email"
@@ -232,7 +231,7 @@ function ModalSignUpEnfant({
                   )}
                 </div>
                 <TextInput
-                  id="password_child"
+                  id="password_parent"
                   required
                   placeholder={
                     !isPasswordBeingTyped
@@ -241,7 +240,7 @@ function ModalSignUpEnfant({
                   }
                   type="password"
                   autoComplete="new-password"
-                  aria-label="choisir un mot de passe  - 8 caractères minimum"
+                  aria-label="choisir un mot de passe"
                   onChange={(event) => {
                     setPassword(event.target.value);
                     setIsPasswordBeingTyped(true);
@@ -267,7 +266,7 @@ function ModalSignUpEnfant({
                 </div>
                 <TextInput
                   className="mb-4"
-                  id="confirmPassword_child"
+                  id="confirmPassword_parent"
                   required
                   placeholder={
                     !isPasswordBeingTyped
@@ -276,7 +275,7 @@ function ModalSignUpEnfant({
                   }
                   type="password"
                   autoComplete="new-password"
-                  aria-label="confirmer son votre mot de passe"
+                  aria-label="confirmer votre mot de passe"
                   onChange={(event) => setConfirmPassword(event.target.value)}
                   value={confirmPassword}
                 />
@@ -284,7 +283,7 @@ function ModalSignUpEnfant({
               <div className=" mb-5 flex justify-between">
                 <div className="flex items-center gap-2">
                   <Checkbox
-                    id="consentement_child"
+                    id="consentement_parent"
                     required
                     className=" text-gray-800"
                   />
@@ -306,7 +305,7 @@ function ModalSignUpEnfant({
           </div>
         </Modal.Body>
       </Modal>
-      <ModalWarningFamily
+      <ModalWarningEnfant
         setOpenModalWarningFamily={setOpenModalWarningFamily}
         openModalWarningFamily={openModalWarningFamily}
         setEmail={setEmail}
@@ -319,4 +318,4 @@ function ModalSignUpEnfant({
   );
 }
 
-export default ModalSignUpEnfant;
+export default ModalSignUpParent;

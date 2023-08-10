@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 
 import { Modal, Button, Label, TextInput } from 'flowbite-react';
 
-import { ModalUserProps } from '../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { updateUser, refreshUser } from '../../../store/reducers/user';
+import { ModalUserProps } from '../../../../interface';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { updateUser, refreshUser } from '../../../../store/reducers/user';
 
 function ModalUser({ setOpenUserModal, openUserModal }: ModalUserProps) {
   const dispatch = useAppDispatch();

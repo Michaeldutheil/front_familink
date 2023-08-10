@@ -1,37 +1,37 @@
 .alert {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: #ffffff;
-    border: 0.1rem solid #e6e6e6;
-    border-radius: 4px;
-    padding: 10px, ;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #ffffff;
+  border: 0.1rem solid #e6e6e6;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .alert.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .alert-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .alert-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .success {
-    color: green;
+  color: green;
 }

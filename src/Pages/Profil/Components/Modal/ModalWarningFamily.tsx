@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { Button, Modal } from 'flowbite-react';
-import { ModalWarningFamilyProps } from '../../../interface';
+import { ModalWarningFamilyProps } from '../../../../interface';
 
-import validation from '../../../assets/Icon/validation.png';
-import { useAppSelector } from '../../../hooks/redux';
+import validation from '../../../../assets/Icon/validation.png';
+import { useAppSelector } from '../../../../hooks/redux';
 
 function ModalWarningFamily({
   setOpenModalWarningFamily,

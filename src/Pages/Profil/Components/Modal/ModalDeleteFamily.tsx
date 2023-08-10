@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { Button, Modal } from 'flowbite-react';
-import { ModalDeleteFamilyProps } from '../../../interface';
+import { ModalDeleteFamilyProps } from '../../../../interface';
 
-import warning from '../../../assets/Icon/attention.png';
+import warning from '../../../../assets/Icon/attention.png';
 
 function ModalDeleteFamily({
   setOpenModalDeleteFamily,
@@ -41,7 +41,7 @@ function ModalDeleteFamily({
                 }}
                 color="failure"
               >
-                Oui, j&apos;en suis sure
+                Oui, j&apos;en suis sûr
               </Button>
               <Button
                 onClick={() => setOpenModalDeleteFamily(!openModalDeleteFamily)}

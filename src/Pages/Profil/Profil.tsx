@@ -10,7 +10,7 @@ import {
   deleteFamily,
 } from '../../store/reducers/family';
 
-import ModalUser from './Modal/ModalUser';
+import ModalUser from './Components/Modal/ModalUser';
 
 import {
   deleteUser,
@@ -24,13 +24,13 @@ import familyIcon from '../../assets/Icon/famille.png';
 import success from '../../assets/Icon/accepter.png';
 import warning from '../../assets/Icon/page-derreur.png';
 
-import ModalFamily from './Modal/ModalFamily';
-import ModalSignUpParent from './Modal/ModalSignUpParent';
-import ModalSignUpEnfant from './Modal/ModalSignUpEnfant';
-import ModalDeleteFamily from './Modal/ModalDeleteFamily';
+import ModalFamily from './Components/Modal/ModalFamily';
+import ModalSignUpParent from './Components/Modal/ModalSignUpParent';
+import ModalSignUpEnfant from './Components/Modal/ModalSignUpEnfant';
+import ModalDeleteFamily from './Components/Modal/ModalDeleteFamily';
 
 import './profil.scss';
-import ModalDeleteUser from './Modal/ModalDeleteUser';
+import ModalDeleteUser from './Components/Modal/ModalDeleteUser';
 import { useNavigate } from 'react-router-dom';
 import { logoutList } from '../../store/reducers/lists';
 import { logoutPicture } from '../../store/reducers/picture';

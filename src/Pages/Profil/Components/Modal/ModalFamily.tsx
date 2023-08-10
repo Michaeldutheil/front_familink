@@ -2,10 +2,10 @@ import { useState, useRef } from 'react';
 
 import { Modal, Button, Label, TextInput } from 'flowbite-react';
 
-import { ModalFamilyProps } from '../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { refreshUser } from '../../../store/reducers/user';
-import { updateFamily } from '../../../store/reducers/family';
+import { ModalFamilyProps } from '../../../../interface';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { refreshUser } from '../../../../store/reducers/user';
+import { updateFamily } from '../../../../store/reducers/family';
 
 function ModalFamily({
   setOpenFamilyModal,

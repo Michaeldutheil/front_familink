@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { Alert, Button, Card, Modal } from 'flowbite-react';
 import './modal.css';
 
-import send from '../../../assets/envoyer.png';
+import send from '../../../../assets/envoyer.png';
 import {
   clearErrorPictures,
   postPictures,
-} from '../../../store/reducers/picture';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+} from '../../../../store/reducers/picture';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 
 function ModalUpload({
   setShowError,

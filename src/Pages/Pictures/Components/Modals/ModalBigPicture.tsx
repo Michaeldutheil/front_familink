@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import { Alert, Button, Modal } from 'flowbite-react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 
-import { Comment, CommentPostData } from '../../../interface';
+import { Comment, CommentPostData } from '../../../../interface';
 
 import './modal.css';
 
-import send from '../../../assets/envoyer.png';
-import warning from '../../../assets/Icon/attention.png';
-import fail from '../../../assets/Icon/avertissement.png';
+import send from '../../../../assets/envoyer.png';
+import warning from '../../../../assets/Icon/attention.png';
+import fail from '../../../../assets/Icon/avertissement.png';
 
 import {
   postComments,
   deletePicture,
   deleteComments,
   clearErrorPictures,
-} from '../../../store/reducers/picture';
+} from '../../../../store/reducers/picture';
 
 function ModalConfirm({
   openBigPicture,

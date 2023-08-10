@@ -62,7 +62,7 @@ function Accueil() {
           <Mockup />
           {showAlertSuccess && (
             <div className={`alert ${showAlertSuccess ? 'show' : ''}`}>
-              <Alert color="info" className="p-6">
+              <Alert color="info">
                 <div className="flex">
                   <img className="mr-5 w-5" src={success} alt="" />
                   Inscription réussie ! Pensez à valider votre email pour
