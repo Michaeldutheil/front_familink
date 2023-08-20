@@ -22,7 +22,6 @@ export const fetchPictures = createAsyncThunk(
     const { data: pictures } = await Api.axios.get(
       `picture/family/${familyId}`
     );
-
     return pictures.data.results;
   }
 );

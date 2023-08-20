@@ -22,9 +22,8 @@ import MainTitle from '../../App/Components/MainTitle/MainTitle';
 import './list.scss';
 
 function List() {
-  const lists = useAppSelector((state) => state.lists.list);
-  const { familyId, role, userId } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
+
   const [openListModal, setOpenListModal] = useState<boolean>(false);
   const [openTaskModal, setOpenTaskModal] = useState<boolean>(false);
   const [openDeleteModalList, setOpenDeleteModalList] =
@@ -34,6 +33,9 @@ function List() {
   const [, setCheckedTasks] = useState<Record<number, boolean>>({});
   const [currentListId, setCurrentListId] = useState<number | null>(null);
   const [currentTaskId, setCurrentTaskId] = useState<number | null>(null);
+
+  const lists = useAppSelector((state) => state.lists.list);
+  const { familyId, role, userId } = useAppSelector((state) => state.user);
 
   const handleToggle = (
     event: React.ChangeEvent<HTMLInputElement>,

@@ -78,7 +78,7 @@ export const login = createAsyncThunk(
 
     // Définition des valeurs par défaut pour la famille
     let family = 'Demo';
-    let familyId = 1;
+    let familyId = '1';
 
     // Si l'utilisateur a une famille, obtenir les détails de la famille
     if (decodedToken.data.familyId !== null) {
