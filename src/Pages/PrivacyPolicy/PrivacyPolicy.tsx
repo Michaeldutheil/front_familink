@@ -92,7 +92,7 @@ function PrivacyPolicy() {
             </li>
             <li>
               Lorsque cela est exigé par la loi ou en réponse à une demande
-              d'une autorité légale compétente.
+              d&apos;une autorité légale compétente.
             </li>
           </ul>
           <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
@@ -128,9 +128,7 @@ function PrivacyPolicy() {
           </p>
           <ul className="mb-6 list-disc pl-6 text-gray-700 dark:text-gray-300">
             <li>Adresse e-mail : privacy@familink.com</li>
-            <li>
-              Numéro de téléphone : [Mettre le numéro de téléphone de Romain]
-            </li>
+            <li>Numéro de téléphone : Prochainement</li>
           </ul>
           <p className="text-gray-700 dark:text-gray-300">
             Notre équipe traitera vos demandes et vous répondra dans les
@@ -148,7 +146,7 @@ function PrivacyPolicy() {
         </div>
         <p className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
           Pour toute question ou préoccupation concernant notre politique de
-          confidentialité, veuillez nous contacter à l'adresse suivante :{' '}
+          confidentialité, veuillez nous contacter à l'adresse suivante :
           <a
             href="mailto:familink.my.projects@gmail.com"
             className="text-blue-500 dark:text-blue-300"

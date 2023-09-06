@@ -35,6 +35,7 @@ const router = createBrowserRouter(
         element={<ResetMail />}
         errorElement={<Error />}
       />
+
       <Route path="/" element={<App />} errorElement={<Error />}>
         <Route errorElement={<Error />}>
           <Route index element={<Accueil />} />
