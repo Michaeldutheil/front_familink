@@ -13,6 +13,7 @@ import validator from 'validator';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { createUser } from '../../../../store/reducers/user';
 import { ModalSignUpProps } from '../../../../interface';
+import { Link } from 'react-router-dom';
 
 function ModalSignUp({
   setOpenSignUpModal,
@@ -278,8 +279,11 @@ function ModalSignUp({
                     className=" text-gray-800"
                   />
                   <Label htmlFor="consentement">
-                    Je consens au Règlement Général sur la Protection des
-                    Données FamiLink
+                    J'ai lu et j'accepte les{' '}
+                    <Link className="mr-1 text-blue-600">
+                      conditions générales d'utilisation
+                    </Link>
+                    de FamiLink *
                   </Label>
                 </div>
               </div>

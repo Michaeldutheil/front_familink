@@ -7,6 +7,7 @@ import { fetchPictures, fetchComments } from '../store/reducers/picture';
 import NavbarComponent from './Components/Navbar/NavbarComponent';
 import Accueil from '../Pages/Accueil/Accueil';
 import FooterHome from './Components/Footer/Footer';
+
 import { fetchMessage } from '../store/reducers/message';
 import { fetchAgenda } from '../store/reducers/agenda';
 
@@ -57,14 +58,16 @@ function App() {
         <NavbarComponent />
         <Outlet />
       </div>
-
       <FooterHome />
     </div>
   ) : (
-    <main className="flex justify-center" style={{ height: '100vh' }}>
-      <Accueil />
-      <Navigate to="/" />
-    </main>
+    <div>
+      {' '}
+      <main className="flex justify-center" style={{ height: '100vh' }}>
+        <Accueil />
+        <Navigate to="/" />
+      </main>
+    </div>
   );
 
   return body;
