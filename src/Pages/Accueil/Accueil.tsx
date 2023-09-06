@@ -96,6 +96,7 @@ function Accueil() {
         openModalResetPassword={openModalResetPassword}
         setOpenModalResetPassword={setOpenModalResetPassword}
       />
+
       <Cookies />
     </>
   );

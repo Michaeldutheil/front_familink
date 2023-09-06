@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useRef, useEffect } from 'react';
 import {
   Modal,
@@ -13,7 +14,8 @@ import validator from 'validator';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { createUser } from '../../../../store/reducers/user';
 import { ModalSignUpProps } from '../../../../interface';
-import { Link } from 'react-router-dom';
+
+import ModalPrivacyPolicy from './ModalPrivacyPolicy';
 
 function ModalSignUp({
   setOpenSignUpModal,
@@ -22,6 +24,7 @@ function ModalSignUp({
 }: ModalSignUpProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
+  const [openModalPrivacy, setOpenModalPrivacy] = useState(false);
 
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
@@ -271,20 +274,29 @@ function ModalSignUp({
                   value={confirmPassword}
                 />
               </div>
-              <div className=" mb-5 flex justify-between">
+              <div className="mb-5 flex justify-between">
                 <div className="flex items-center gap-2">
                   <Checkbox
                     id="consentement"
                     required
-                    className=" text-gray-800"
+                    className="text-gray-800"
                   />
-                  <Label htmlFor="consentement">
-                    J'ai lu et j'accepte les{' '}
-                    <Link className="mr-1 text-blue-600">
-                      conditions générales d'utilisation
-                    </Link>
-                    de FamiLink *
-                  </Label>
+                  <Label className="" htmlFor="consentement">
+                    J'ai lu et j'accepte les conditions générales d'utilisation
+                    de FamiLink
+                  </Label>{' '}
+                  <span
+                    className="cursor-pointer text-blue-700 text-familink-black"
+                    onClick={() => {
+                      setOpenModalPrivacy(!openModalPrivacy);
+                      setOpenSignUpModal(false);
+                    }}
+                    onKeyDown={() => setOpenModalPrivacy(!openModalPrivacy)}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    (Lire les CGU)
+                  </span>
                 </div>
               </div>
               <div className="flex w-full justify-center">
@@ -299,6 +311,12 @@ function ModalSignUp({
           </div>
         </Modal.Body>
       </Modal>
+      <ModalPrivacyPolicy
+        openModalPrivacy={openModalPrivacy}
+        setOpenModalPrivacy={setOpenModalPrivacy}
+        openSignUpModal={openSignUpModal}
+        setOpenSignUpModal={setOpenSignUpModal}
+      />
     </div>
   );
 }

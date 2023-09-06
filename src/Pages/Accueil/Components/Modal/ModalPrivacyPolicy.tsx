@@ -1,27 +1,43 @@
-import React from 'react';
+/* eslint-disable react/no-unescaped-entities */
+import { useRef } from 'react';
 
-import { useState, useEffect, useRef, FormEvent } from 'react';
+import { Button, Modal } from 'flowbite-react';
 
-import { Modal } from 'flowbite-react';
-
-function ModalPrivacyPolicy(openModalPrivacy, setOpenModalPrivacy) {
+function ModalPrivacyPolicy({
+  openModalPrivacy,
+  setOpenModalPrivacy,
+  openSignUpModal,
+  setOpenSignUpModal,
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   return (
     <div ref={rootRef}>
       <Modal
         root={rootRef.current ?? undefined}
         onClose={() => {
-          setOpenModalPrivacy(false);
+          setOpenModalPrivacy(!openModalPrivacy);
         }}
         show={openModalPrivacy}
         className="modal flex items-center justify-center bg-transparent backdrop-blur-sm"
       >
-        {' '}
-        <main className="bg-[#e0dedb] dark:bg-gray-900">
+        <Modal.Body className="rounded" style={{ backgroundColor: '#e0dedb' }}>
           <div className="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
-            <h2 className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-              Politique de confidentialité
-            </h2>
+            <section className="flex justify-between">
+              <h2 className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                Politique de confidentialité
+              </h2>
+              <Button
+                size="xs"
+                className="hover:bg-gray-90 rounded-full bg-gray-800 font-medium text-white transition-all duration-300 hover:bg-slate-400 hover:text-familink-black focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                onClick={() => {
+                  setOpenSignUpModal(true);
+                  setOpenModalPrivacy(false);
+                }}
+              >
+                X
+              </Button>
+            </section>
+
             <p className="mb-8 text-center font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
               Votre vie privée est importante pour nous. Cette politique de
               confidentialité explique comment nous collectons, utilisons,
@@ -173,8 +189,21 @@ function ModalPrivacyPolicy(openModalPrivacy, setOpenModalPrivacy) {
               </a>
               .
             </p>
+
+            <div className="mt-8 flex justify-center">
+              <Button
+                size="xs"
+                className=" hover:bg-gray-90 rounded-full bg-gray-800 font-medium text-white transition-all duration-300 hover:bg-slate-400 hover:text-familink-black focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                onClick={() => {
+                  setOpenSignUpModal(true);
+                  setOpenModalPrivacy(false);
+                }}
+              >
+                Revenir au formulaire d'inscription
+              </Button>
+            </div>
           </div>
-        </main>
+        </Modal.Body>
       </Modal>
     </div>
   );
