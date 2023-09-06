@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useState, useRef, useEffect } from 'react';
 import {
   Modal,
@@ -50,8 +49,13 @@ function ModalSignUp({
   }, [confirmPassword, password]);
 
   useEffect(() => {
-    if (password.length < 8) {
-      setPasswordError('Le mot de passe doit comporter au moins 8 caractères');
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/;
+
+    if (password.length < 8 || !password.match(passwordRegex)) {
+      setPasswordError(
+        'doit comporter au moins 8 caractères, une majuscule et un caractère spécial'
+      );
     } else {
       setPasswordError('Le mot de passe est correct');
     }
@@ -213,10 +217,13 @@ function ModalSignUp({
                   <Label htmlFor="new-password" value="Votre mot de passe" />
                   {isPasswordBeingTyped && passwordError && (
                     <p
-                      className={`mt-1.2 ml-1  text-sm ${
-                        password.length < 8
-                          ? 'font-semibold text-familink-black '
-                          : 'success'
+                      className={`ml-1 mt-1 text-xs ${
+                        password.length < 8 ||
+                        !password.match(
+                          /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/
+                        )
+                          ? 'font-semibold text-red-600'
+                          : 'font-semibold text-green-600'
                       }`}
                     >
                       {passwordError}
@@ -229,7 +236,7 @@ function ModalSignUp({
                   required
                   placeholder={
                     !isPasswordBeingTyped
-                      ? 'doit comporter au moins 8 caractères'
+                      ? 'doit comporter au moins 8 caractères, une majuscule et un caractère spécial'
                       : ''
                   }
                   type="password"
@@ -264,7 +271,7 @@ function ModalSignUp({
                   required
                   placeholder={
                     !isPasswordBeingTyped
-                      ? 'doit comporter au moins 8 caractères'
+                      ? 'doit comporter au moins 8 caractères, une majuscule et un caractère spécial'
                       : ''
                   }
                   type="password"
